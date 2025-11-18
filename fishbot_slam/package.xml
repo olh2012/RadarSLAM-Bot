@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>fishbot_slam</name>
+  <version>1.0.0</version>
+  <description>FishBot二轮差速机器人激光雷达SLAM建图项目</description>
+  <maintainer email="franka907@126.com">欧林海</maintainer>
+  <author email="franka907@126.com">欧林海</author>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- ROS2 核心依赖 -->
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  
+  <!-- 机器人描述和可视化 -->
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  
+  <!-- Gazebo仿真 -->
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  
+  <!-- 传感器消息 -->
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  
+  <!-- SLAM和导航 -->
+  <depend>slam_toolbox</depend>
+  <depend>nav2_bringup</depend>
+  <depend>nav2_map_server</depend>
+  
+  <!-- ROS2 Control -->
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>controller_manager</depend>
+  <depend>diff_drive_controller</depend>
+  
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

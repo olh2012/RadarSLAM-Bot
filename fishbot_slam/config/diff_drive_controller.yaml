@@ -1,0 +1,59 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50  # Hz
+
+    # 控制器列表
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# 差速驱动控制器参数
+diff_drive_controller:
+  ros__parameters:
+    # 轮子配置
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+    
+    # 轮子间距和半径
+    wheel_separation: 0.2  # 两轮间距 (米)
+    wheel_radius: 0.033    # 轮子半径 (米)
+    
+    # 里程计配置
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    
+    # 是否发布里程计到tf
+    enable_odom_tf: true
+    
+    # 速度和加速度限制
+    linear:
+      x:
+        has_velocity_limits: true
+        has_acceleration_limits: true
+        has_jerk_limits: false
+        max_velocity: 0.5           # m/s
+        min_velocity: -0.5          # m/s
+        max_acceleration: 1.0       # m/s^2
+        min_acceleration: -1.0      # m/s^2
+    
+    angular:
+      z:
+        has_velocity_limits: true
+        has_acceleration_limits: true
+        has_jerk_limits: false
+        max_velocity: 1.0           # rad/s
+        min_velocity: -1.0          # rad/s
+        max_acceleration: 2.0       # rad/s^2
+        min_acceleration: -2.0      # rad/s^2
+
+# 关节状态发布器参数
+joint_state_broadcaster:
+  ros__parameters:
+    joints:
+      - left_wheel_joint
+      - right_wheel_joint
