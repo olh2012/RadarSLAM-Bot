@@ -1,0 +1,24 @@
+# A*路径规划器参数配置
+# 作者: 欧林海 (franka907@126.com)
+# 日期: 2025年11月19日
+
+astar_planner:
+  ros__parameters:
+    # 移动模式
+    diagonal_movement: true          # 是否允许对角线移动（8方向）
+    
+    # 路径优化参数
+    smoothing_iterations: 5          # 路径平滑迭代次数
+    
+    # 安全距离参数
+    obstacle_inflation: 2            # 障碍物膨胀半径（栅格数）
+    
+    # 占据阈值
+    occupancy_threshold: 50          # 占据栅格阈值（0-100）
+    
+    # 高级参数
+    timeout_seconds: 30.0            # 规划超时时间
+    max_iterations: 10000            # 最大搜索迭代次数
+    
+    # 路径发布频率
+    publish_rate: 10.0               # Hz

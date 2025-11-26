@@ -40,6 +40,8 @@ install(
   PROGRAMS
     scripts/save_map.py
     scripts/teleop_keyboard.py
+    scripts/astar_planner.py
+    scripts/path_follower.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

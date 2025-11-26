@@ -1,0 +1,21 @@
+# Pure Pursuit路径跟踪器参数配置
+# 作者: 欧林海 (franka907@126.com)
+# 日期: 2025年11月19日
+
+path_follower:
+  ros__parameters:
+    # Pure Pursuit参数
+    lookahead_distance: 0.5          # 前视距离基准值 (m)
+    min_lookahead_distance: 0.3      # 最小前视距离 (m)
+    max_lookahead_distance: 1.0      # 最大前视距离 (m)
+    lookahead_gain: 0.3              # 前视距离增益（速度依赖）
+    
+    # 速度控制
+    linear_velocity: 0.3             # 线速度 (m/s)
+    max_angular_velocity: 1.0        # 最大角速度 (rad/s)
+    
+    # 目标容差
+    goal_tolerance: 0.1              # 目标点容差 (m)
+    
+    # 控制频率
+    control_rate: 10.0               # 控制频率 (Hz)
